@@ -7,12 +7,15 @@ class Personne:
         return('{}, {}'.format (self.nom, self.prenom))
 
 
-class CompteSimple:
+class CompteSimple: 
 
-    def __init__(self, depot, titulaire:Personne, numero,):
+    dernier_numero = 10000
+
+    def __init__(self, depot, titulaire:Personne):
         self.__solde = depot
         self.titulaire = titulaire
-        self.numero = listecomptes[-1] + 1
+        CompteSimple.dernier_numero += 1
+        self.numero = CompteSimple.dernier_numero
 
     def __str__(self):
         return str(self.titulaire) + " : " + str(self.solde)
@@ -28,13 +31,11 @@ class CompteSimple:
     def debiter(self, montant):
         self.__solde -= montant
     
-    @staticmethod
-    def numero_compte(numero):
-        listecomptes:[1000]
+
 
 class CompteCourrant(CompteSimple):
-    def __init__(self, depot, titulaire:Personne, numero):
-        super().__init__(depot, titulaire, numero)
+    def __init__(self, depot, titulaire:Personne):
+        super().__init__(depot, titulaire)
         self.historique = []
 
 
