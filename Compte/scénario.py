@@ -1,7 +1,7 @@
 from compte import *
 
 #créer un compte
-def main():
+def main_compte():
     P1 = Personne("Brousse", "Louis")
     print(P1)
 
@@ -15,12 +15,11 @@ def main():
     assert C1.solde == 12000
     assert C1.titulaire is P1
     
-    C1.créditer(1000)
+    C1.crediter(1000)
     assert C1.solde == 13000
     print(C1)
 
-
-    C1.débiter(15000)
+    C1.debiter(15000)
     assert C1.solde == -2000
     print(C1)
 
@@ -34,6 +33,40 @@ def main():
     print(B1.total())
     print(B1)
 
-    C4.créditer(400)
+    
+
+def main_banque():
+    P1 = Personne("Brousse", "Louis")
+    
+    P2 = Personne("Mignon", "Rosalie")
+    
+    B1 = Banque()
+    C1 = B1.ouvrir(P1, 500)
+    print(C1)
+    
+    C1.crediter(500)
+    print(C1)
+
+    C2 = B1.ouvrir(P2, 1500)
+    print(C2)
+
     print(B1)
-main()
+
+    print(B1.total())
+
+    B1.frais(10)
+    print(B1)
+    print(C1)
+
+    CC2 = B1.ouvrircc(P2, 1500)
+    CC2.crediter(500)
+    print(CC2)
+    CC2.debiter(200)
+    print(CC2)
+    
+    CC2.releve_compte()
+    print(CC2.numero)
+
+
+main_banque()
+#main_compte()

@@ -1,6 +1,7 @@
-class Fruit:
-    def __init__(self, type):
-        self.type = type
+from compte import *
+import pytest
 
-    def __str__(self):
-        return str(self)
+def test_Personne():
+    P1 = Personne("Brousse", "Louis")
+    assert P1.nom == "Brousse"
+    
