@@ -1,0 +1,35 @@
+créer un objet :
+
+const p = document.createElement('p');
+const t = document.createTextNode('fin')
+p.appendChild(t)
+const body = document.getElementsByTagName("body") [0]  """[0] juste le dernier, on fait cette syntaxe car le mjs va s'exécuter dans le navigateur et document représente la page dans laquelle il s'exécute, de plus body existe déjà"""
+body.appendChild(p)
+
+version 2
+
+const p = document.createElement('p');
+const t = document.createTextNode('fin')
+p.appendChild(t)
+const body = document.queryselector("body")  """ car prend le premier qui s'appelle body"""
+body.appendChild(p)
+
+version 3
+
+const p = document.createElement('p');
+const t = document.createTextNode('fin')
+p.appendChild(t)
+document.body.append(p) """il y a toujours une balise body dans le html
+document.body.append(t, y, u) """ possible d'en rajouter plusier frere"""
+ocument.body.append("t1", "y1", "u1") """ ajoute ce texte à la fin de body"""
+p.append(t)
+
+version 4
+const p = document.createElement('p');
+const t = document.createTextNode('fin'))
+document.body.appendChild(document.createTextNode('fin'))
+
+créer un Attribut :
+const ap = document.createAttribute("publié"); 
+ap.value = "oui";
+p.setAttributeNode(ap);

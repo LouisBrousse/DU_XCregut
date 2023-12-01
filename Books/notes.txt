@@ -1,0 +1,2 @@
+créer un objet :
+document.createElement("p")
