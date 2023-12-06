@@ -73,13 +73,14 @@ function display(books) {
             const dl = document.createElement('dl');
             li.appendChild(dl);
                 const dt = document.createElement('dt');
-                dt.append(`${cle}`);
+                dt.classList.add(cle);
+                dt.append(cle);
                 dl.appendChild(dt);
                 
 
                 const dd = document.createElement('dd');
-                dd.append(`${valeur}`);
-                dl.appendChild(dd);
+                dd.append(valeur);
+                dl[cle, valeur.appendChild(dd);
                 
             } 
         
